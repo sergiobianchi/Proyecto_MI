@@ -9,18 +9,17 @@ const lugaresModulo = (function () {
     página (las direcciones ingresables por el usuario).
     Para esto creá un círculo con radio de 20000 metros y usalo para fijar
     los límites de la búsqueda de dirección. El círculo no se debe ver en el mapa. */
-    
+    debugger;
     let autocomplete = new google.maps.places.Autocomplete($('#direccion')[0], { types: ['geocode'] });
     autocomplete.bindTo('bounds', mapa);
-    debugger;
+    autocomplete.setOptions({strictBounds: true});
+
     let areaLimite = new google.maps.Circle( {
       center: posicionCentral,
-      radius: 2000,
-      fillColor: '#FF0000'
+      radius: 20000
       });
 
     autocomplete.setBounds(areaLimite.getBounds());
-    
   }
 
     // Inicializo la variable servicioLugares y llamo a la función autocompletar
