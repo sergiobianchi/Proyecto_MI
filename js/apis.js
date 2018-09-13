@@ -12,13 +12,10 @@ function inicializarMapa () {
                               center: posicionCentral,
                               zoom: zoomInicial});
 
-    /* Modificá la variable mapa con el constructor Map().
-    Tendrás que asignarle un valor de zoom y
-    un centro igual a la variable posicionCentral. */
-
+  streetViewModulo.inicializar();
   geocodificadorModulo.inicializar();
   marcadorModulo.inicializar();
   direccionesModulo.inicializar();
   lugaresModulo.inicializar();
-  streetViewModulo.inicializar();
+  
 }
